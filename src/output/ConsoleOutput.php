@@ -1,7 +1,7 @@
 <?php
 namespace TheSeer\CLI {
 
-    class ConsoleLogger implements Logger {
+    class ConsoleOutput implements Output {
 
         const VERBOSE_ERROR = 1;
         const VERBOSE_WARNING = 2;
@@ -30,29 +30,36 @@ namespace TheSeer\CLI {
         }
 
         /**
-         * @param string $infoMessage
+         * @param $textMessage
          */
-        public function logInfo($infoMessage) {
-            if ($this->verbosity >= self::VERBOSE_INFO) {
-                fwrite(STDOUT, $infoMessage . "\n");
-            }
+        public function writeText($textMessage) {
+            fwrite(STDOUT, $textMessage);
         }
 
         /**
-         * @param string $errorMessage
+         * @param string $infoMessage
          */
-        public function logError($errorMessage) {
-            if ($this->verbosity >= self::VERBOSE_ERROR) {
-                fwrite(STDERR, '[ERROR]   ' . $errorMessage . "\n");
+        public function writeInfo($infoMessage) {
+            if ($this->verbosity >= self::VERBOSE_INFO) {
+                $this->writeText($infoMessage . "\n");
             }
         }
 
         /**
          * @param string $warningMessage
          */
-        public function logWarning($warningMessage) {
+        public function writeWarning($warningMessage) {
             if ($this->verbosity >= self::VERBOSE_WARNING) {
-                fwrite(STDOUT, '[WARNING] ' . $warningMessage . "\n");
+                $this->writeText('[WARNING] ' . $warningMessage . "\n");
+            }
+        }
+
+        /**
+         * @param string $errorMessage
+         */
+        public function writeError($errorMessage) {
+            if ($this->verbosity >= self::VERBOSE_ERROR) {
+                fwrite(STDERR, '[ERROR]   ' . $errorMessage . "\n");
             }
         }
 

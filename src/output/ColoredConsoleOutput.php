@@ -1,22 +1,22 @@
 <?php
 namespace TheSeer\CLI {
 
-    class ColoredConsoleLogger extends ConsoleLogger {
+    class ColoredConsoleOutput extends ConsoleOutput {
 
         /**
          * @param string $errorMessage
          */
-        public function logError($errorMessage) {
+        public function writeError($errorMessage) {
             $errorMessage = sprintf("\033[0;31m %s \033[0m", $errorMessage);
-            parent::logError($errorMessage);
+            parent::writeError($errorMessage);
         }
 
         /**
          * @param string $warningMessage
          */
-        public function logWarning($warningMessage) {
+        public function writeWarning($warningMessage) {
             $warningMessage = sprintf("\033[1;33m %s \033[0m", $warningMessage);
-            parent::logWarning($warningMessage);
+            parent::writeWarning($warningMessage);
         }
 
     }

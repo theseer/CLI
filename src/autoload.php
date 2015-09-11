@@ -7,15 +7,16 @@ spl_autoload_register(
         static $classes = null;
         if ($classes === null) {
             $classes = array(
-                'theseer\\cli\\coloredconsolelogger' => '/logger/ColoredConsoleLogger.php',
+                'theseer\\cli\\coloredconsoleoutput' => '/output/ColoredConsoleOutput.php',
                 'theseer\\cli\\command' => '/commands/Command.php',
                 'theseer\\cli\\commandlocator' => '/commands/CommandLocator.php',
                 'theseer\\cli\\commandlocatorexception' => '/commands/CommandLocatorException.php',
                 'theseer\\cli\\commandoptions' => '/commands/CommandOptions.php',
                 'theseer\\cli\\commandoptionsexception' => '/commands/CommandOptionsException.php',
-                'theseer\\cli\\consolelogger' => '/logger/ConsoleLogger.php',
+                'theseer\\cli\\consoleinput' => '/input/ConsoleInput.php',
+                'theseer\\cli\\consoleoutput' => '/output/ConsoleOutput.php',
                 'theseer\\cli\\exceptionhandler' => '/ExceptionHandler.php',
-                'theseer\\cli\\logger' => '/logger/Logger.php',
+                'theseer\\cli\\output' => '/output/Output.php',
                 'theseer\\cli\\request' => '/Request.php',
                 'theseer\\cli\\runner' => '/Runner.php',
                 'theseer\\cli\\version' => '/Version.php'
