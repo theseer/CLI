@@ -16,6 +16,7 @@ spl_autoload_register(
                 'theseer\\cli\\consoleinput' => '/input/ConsoleInput.php',
                 'theseer\\cli\\consoleoutput' => '/output/ConsoleOutput.php',
                 'theseer\\cli\\exceptionhandler' => '/ExceptionHandler.php',
+                'theseer\\cli\\input' => '/input/Input.php',
                 'theseer\\cli\\output' => '/output/Output.php',
                 'theseer\\cli\\request' => '/Request.php',
                 'theseer\\cli\\runner' => '/Runner.php',

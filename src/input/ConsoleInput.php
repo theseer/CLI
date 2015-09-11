@@ -1,7 +1,7 @@
 <?php
 namespace TheSeer\CLI {
 
-    class ConsoleInput {
+    class ConsoleInput implements Input {
 
         /**
          * @var Output
