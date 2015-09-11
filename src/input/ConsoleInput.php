@@ -25,7 +25,7 @@ namespace TheSeer\CLI {
         public function confirm($message) {
             $this->output->writeText(rtrim($message) . ' [Y|n] ');
             $response = fgetc(STDIN);
-            return ($response === '' || strpos('Yy', $response[0]) !== FALSE);
+            return (trim($response) === '' || strpos('Yy', $response[0]) !== FALSE);
         }
     }
 
